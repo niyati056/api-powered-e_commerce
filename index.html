@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS ZA - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body,
+        .new-arrival-text,
+        .see-all-text {
+            font-family: "Andika", sans-serif;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+    <div class="main bg-[#F5EDFF] min-h-screen w-full relative pb-8">
+        <nav class="px-4 md:px-8 pt-3 relative z-50">
+            <div class="flex justify-between items-center max-w-7xl mx-auto">
+                <span class="logo text-lg sm:text-xl font-bold cursor-pointer"><a href="index.html">OS ZA<sup>&#174;</sup></a></span>
+                
+                <ul class="list hidden md:flex items-center gap-7">
+                    <li class="list-items cursor-pointer hover:scale-105 transition"><a href="index.html"
+                            class="nav-links font-semibold">Home</a></li>
+                    <li class="list-items cursor-pointer hover:scale-105 transition"><a href="products.html"
+                            class="nav-links">Products</a></li>
+                    <li class="list-items cursor-pointer hover:scale-105 transition"><a href="category.html"
+                            class="nav-links">Categories</a></li>
+                </ul>
+
+                <div class="text flex gap-4 items-center">
+                    <a href="wishlist.html" title="Wishlist">
+                        <img src="images/heart.svg" class="h-6 w-7 sm:h-7 sm:w-8 hover:scale-110 transition">
+                    </a>
+
+                    <a onclick="addtocartview()" class="cursor-pointer" title="Cart">
+                        <img src="images/cart-img.svg" class="h-6 w-7 sm:h-7 sm:w-8 hover:scale-110 transition">
+                    </a>
+
+                    <div id="authButtons" class="hidden md:flex items-center gap-3">
+                        <a href="login.html" class="bg-black text-white px-3 py-1 rounded-xl text-sm hover:bg-gray-800 transition">
+                            Login
+                        </a>
+
+                        <a href="signup.html" class="bg-black text-white px-3 py-1 rounded-xl text-sm hover:bg-gray-800 transition">
+                            Sign Up
+                        </a>
+                    </div>
+
+                    <div id="profile" class="hidden flex items-center gap-3">
+                        <span id="username" class="font-medium text-sm"></span>
+
+                        <button onclick="logout()" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">
+                            Logout
+                        </button>
+                    </div>
+
+                    <button id="menuToggle" onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-800 focus:outline-none ml-2" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#F5EDFF] border-b border-purple-200 shadow-xl px-6 py-4 flex flex-col gap-4 z-50">
+                <a href="index.html" class="font-semibold text-base py-1 border-b border-purple-200">Home</a>
+                <a href="products.html" class="font-semibold text-base py-1 border-b border-purple-200">Products</a>
+                <a href="category.html" class="font-semibold text-base py-1 border-b border-purple-200">Categories</a>
+                <div id="mobileAuthButtons" class="flex items-center gap-3 pt-2">
+                    <a href="login.html" class="bg-black text-white px-4 py-2 rounded-xl text-sm font-semibold text-center w-full">Login</a>
+                    <a href="signup.html" class="border border-black text-black px-4 py-2 rounded-xl text-sm font-semibold text-center w-full">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-sec flex flex-col md:flex-row justify-center items-center relative min-h-[60vh] md:min-h-[calc(100vh-140px)] py-6 md:py-0 px-4">
+            <div class="left-hero z-0 text-center md:text-right">
+                <span class="text-o tracking-[2px] sm:tracking-[4px] text-7xl sm:text-9xl md:text-[160px] lg:text-[220px] xl:text-[280px] font-bold text-gray-900 leading-none select-none">
+                    OS
+                </span>
+            </div>
+            <div class="center-hero z-10 my-2 md:my-0">
+                <img src="images/boy-image.png" alt="Model" class="boy h-56 sm:h-72 md:h-[450px] lg:h-[500px] w-auto object-contain drop-shadow-md mx-auto">
+            </div>
+            <div class="right-hero z-0 text-center md:text-left">
+                <div class="right-hero-top">
+                    <span class="text-o tracking-[2px] sm:tracking-[4px] text-7xl sm:text-9xl md:text-[160px] lg:text-[220px] xl:text-[280px] font-bold text-gray-900 leading-none select-none">
+                        ZA
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-hero-bottom relative md:absolute md:bottom-4 md:right-8 text-xs flex flex-wrap justify-center md:justify-end gap-6 sm:gap-10 p-4 md:p-0">
+            <div class="brand">
+                <p class="heading-text font-bold text-sm mb-1">Brands</p>
+                <ul class="item-brand leading-relaxed cursor-pointer text-gray-700">
+                    <li class="item-list-brand hover:text-[#A855F7]">New me</li>
+                    <li class="item-list-brand hover:text-[#A855F7]">Gucci</li>
+                    <li class="item-list-brand hover:text-[#A855F7]">Lacoste</li>
+                    <li class="item-list-brand hover:text-[#A855F7]">LV</li>
+                    <li class="item-list-brand hover:text-[#A855F7]">See All</li>
+                </ul>
+            </div>
+            <div class="products">
+                <p class="heading-text font-bold text-sm mb-1">Products</p>
+                <ul class="item-products leading-relaxed cursor-pointer text-gray-700">
+                    <li class="item-list-product hover:text-[#A855F7]">T-shirts</li>
+                    <li class="item-list-product hover:text-[#A855F7]">Mascara</li>
+                    <li class="item-list-product hover:text-[#A855F7]">Lip Sticks</li>
+                    <li class="item-list-product hover:text-[#A855F7]">Shirts</li>
+                    <li class="item-list-product hover:text-[#A855F7]">See All</li>
+                </ul>
+            </div>
+            <div class="type">
+                <p class="heading-text font-bold text-sm mb-1">Type</p>
+                <ul class="item-type leading-relaxed cursor-pointer text-gray-700">
+                    <li class="item-list-type hover:text-[#A855F7]">Men</li>
+                    <li class="item-list-type hover:text-[#A855F7]">Women</li>
+                    <li class="item-list-type hover:text-[#A855F7]">Beauty</li>
+                    <li class="item-list-type hover:text-[#A855F7]">Baby</li>
+                    <li class="item-list-type hover:text-[#A855F7]">See All</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-arrivals py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="top-new-arrival flex justify-between items-center mb-6">
+            <span class="new-arrival-text text-2xl sm:text-4xl font-bold">Products</span>
+            <div class="search flex items-center gap-2 rounded-lg cursor-pointer hover:opacity-80 transition"
+                onclick="window.location.href='products.html'">
+                <span class="see-all-text text-sm sm:text-base font-semibold tracking-wider">See All</span>
+                <img src="images/right-arrow.svg" alt="" class="search-icon h-4 w-4">
+            </div>
+        </div>
+        <div class="bottom-new-arrival bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div class="products-main min-h-[250px] flex items-center justify-center">
+                <div class="product-display grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="top-category flex justify-between items-center mb-6">
+            <span class="category-text text-2xl sm:text-4xl font-bold">Categories</span>
+            <div class="search-cat flex items-center gap-2 rounded-lg cursor-pointer hover:opacity-80 transition"
+                onclick="window.location.href='category.html'">
+                <span class="see-all-text-category text-sm sm:text-base font-semibold tracking-wider">See All</span>
+                <img src="images/right-arrow.svg" alt="" class="search-icon h-4 w-4">
+            </div>
+        </div>
+        <div class="bottom-new-arrival bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div class="cat-main min-h-[250px] flex items-center justify-center">
+                <div class="cat-display grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#F5EDFF] text-gray-800 py-12 px-4 border-t border-purple-100">
+        <div class="max-w-5xl mx-auto flex flex-col items-center gap-8">
+            <ul class="flex flex-wrap justify-center gap-6 sm:gap-10 font-medium">
+                <li><a href="index.html" class="hover:text-purple-600 transition">Home</a></li>
+                <li><a href="products.html" class="hover:text-purple-600 transition">Products</a></li>
+                <li><a href="category.html" class="hover:text-purple-600 transition">Categories</a></li>
+                <li><a href="checkout.html" class="hover:text-purple-600 transition">Cart</a></li>
+                <li><a href="wishlist.html" class="hover:text-purple-600 transition">Wishlist</a></li>
+            </ul>
+
+            <div class="flex gap-8 text-xl">
+                <a href="#" class="hover:text-purple-600 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-purple-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-purple-600 transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="text-sm text-gray-600 text-center">&copy; 2026 OS ZA, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/home.js"></script>
+    <script src="scripts/auth.js"></script>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const icon = document.getElementById("menuIcon");
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                menu.classList.add("hidden");
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        }
+
+        window.onload = function () {
+            let loggedIn = localStorage.getItem("isLoggedIn");
+
+            if (loggedIn === "true") {
+                let user = JSON.parse(localStorage.getItem("user"));
+                const authBtns = document.getElementById("authButtons");
+                const mobileAuthBtns = document.getElementById("mobileAuthButtons");
+                if (authBtns) authBtns.style.display = "none";
+                if (mobileAuthBtns) mobileAuthBtns.style.display = "none";
+
+                const profile = document.getElementById("profile");
+                if (profile) {
+                    profile.classList.remove("hidden");
+                    document.getElementById("username").innerText = user.name;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

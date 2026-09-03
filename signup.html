@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
+
+        body{
+            font-family: "Andika", sans-serif;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" bg-[#F5EDFF] bg-center min-h-screen flex justify-center items-center">
+
+    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-md mx-4 border border-purple-100">
+
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">
+            Sign Up
+        </h2>
+
+        <form>
+
+            <!-- Full Name -->
+            <div class="mb-4">
+                <label class="block mb-2 text-sm font-medium text-gray-700">Full Name</label>
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+                >
+            </div>
+
+            <!-- Email -->
+            <div class="mb-4">
+                <label class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+                >
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4">
+                <label class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+                >
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-700">Confirm Password</label>
+                <input
+                    type="password"
+                    placeholder="Confirm your password"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+                >
+            </div>
+
+            <!-- Sign Up Button -->
+            <button
+                type="button"
+                onclick="signup()"
+                class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 font-semibold transition text-sm shadow-sm">
+                Sign Up
+            </button>
+
+        </form>
+
+        <p class="text-center mt-6 text-sm text-gray-600">
+            Already have an account?
+            <a href="login.html" class="text-purple-600 hover:underline font-semibold">
+                Login
+            </a>
+        </p>
+
+    </div>
+<script src="scripts/auth.js"></script>
+
+</body>
+</html>
